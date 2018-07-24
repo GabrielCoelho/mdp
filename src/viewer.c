@@ -2,7 +2,7 @@
  * Functions necessary to display a deck of slides in different color modes
  * using ncurses. Only white, red, and blue are supported, as they can be
  * faded in 256 color mode.
- * Copyright (C) 2016 Michael Goehler
+ * Copyright (C) 2018 Michael Goehler
  *
  * This file is part of mdp.
  *
@@ -982,7 +982,7 @@ int int_length (int val) {
 
 int get_slide_number(char init) {
     int retval = init - '0';
-    char c;
+    int c;
     // block for tenths of a second when using getch, ERR if no input
     halfdelay(GOTO_SLIDE_DELAY);
     while((c = getch()) != ERR) {
